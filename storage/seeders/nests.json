@@ -1,0 +1,28 @@
+{
+    "nests": [
+        {
+            "name": "Counter Strike",
+            "description": "Counter Strike servers of various types"
+        },
+        {
+            "name": "Rust",
+            "description": "Rust servers of various types"
+        },
+        {
+            "name": "Grand Theft Auto",
+            "description": "Grand Theft Auto servers of various types"
+        },
+        {
+            "name": "Team Fortress",
+            "description": "Team Fortress servers of various types"
+        },
+        {
+            "name": "Minecraft",
+            "description": "Minecraft servers of various types"
+        },
+        {
+            "name": "The Duel",
+            "description": "The Duel servers of various types"
+        }
+    ]
+}

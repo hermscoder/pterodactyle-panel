@@ -60,6 +60,7 @@ services:
       - "/srv/pterodactyl/nginx/:/etc/nginx/http.d/"
       - "/srv/pterodactyl/certs/:/etc/letsencrypt/"
       - "/srv/pterodactyl/logs/:/app/storage/logs"
+      - "./storage/seeders:/srv/pterodactyl/seeders"
     environment:
       <<: [*panel-environment, *mail-environment]
       DB_PASSWORD: *db-password
