@@ -73,7 +73,7 @@ So the directory structure will look something like this:
     │ └── egg-forge-minecraft.json
     │ └── egg-vanilla-minecraft.json
     └── ...
-  */srv/pterodactyl/seeders/ directory*
+  *./storage/seeders/ directory*
   
  So for the nest:
 
