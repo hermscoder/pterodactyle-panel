@@ -5,7 +5,7 @@
 ![GitHub Releases](https://img.shields.io/github/downloads/pterodactyl/panel/latest/total?style=for-the-badge)
 ![GitHub contributors](https://img.shields.io/github/contributors/pterodactyl/panel?style=for-the-badge)
 
-# Pterodactyl Panel
+# Pterodactyl Panel - Customizable Seeder - Custom nests and eggs initialization
 
 Pterodactyl® is a free, open-source game server management panel built with PHP, React, and Go. Designed with security
 in mind, Pterodactyl runs all game servers in isolated Docker containers while exposing a beautiful and intuitive
@@ -16,57 +16,75 @@ Stop settling for less. Make game servers a first class citizen on your platform
 ![Image](https://cdn.pterodactyl.io/site-assets/pterodactyl_v1_demo.gif)
 
 ## Why I created this fork
-I created this fork because I wanted to have the possibility to initialize the pterodactyle panel with specified nests and eggs.
+
+I created this fork because I wanted to have the possibility to initialize the pterodactyle panel with specified nests and eggs. Basically a customizable seeder.
+  
 
 ### How does it work?
+
 You need to bind the /srv/pterodactyl/seeders directory to you local directory and inside the seeders folder you must have a nests.json containing all the nests you want to create in a json format.
 
-Example of nests.json
-`` 
-{
-    "nests": [
-        {
-            "name": "Counter Strike",
-            "description": "Counter Strike servers of various types"
-        },
-        {
-            "name": "Rust",
-            "description": "Rust servers of various types"
-        },
-        {
-            "name": "Grand Theft Auto",
-            "description": "Grand Theft Auto servers of various types"
-        },
-        {
-            "name": "Team Fortress",
-            "description": "Team Fortress servers of various types"
-        },
-        {
-            "name": "Minecraft",
-            "description": "Minecraft servers of various types"
-        },
-        {
-            "name": "The Duel",
-            "description": "The Duel servers of various types"
-        }
-    ]
-}
-``
+  
 
-Along with the JSON you need to create a eggs directory, that will contain one folder for each egg you want to be added. And inside this folder will be the pterodactyle JSON file for that egg.
+Example of nests.json
+
+    
+    {
+	    "nests": [
+	        {
+	            "name": "Counter Strike",
+	            "description": "Counter Strike servers of various types"
+	        },
+	        {
+	            "name": "Rust",
+	            "description": "Rust servers of various types"
+	        },
+	        {
+	            "name": "Grand Theft Auto",
+	            "description": "Grand Theft Auto servers of various types"
+	        },
+	        {
+	            "name": "Team Fortress",
+	            "description": "Team Fortress servers of various types"
+	        },
+	        {
+	            "name": "Minecraft",
+	            "description": "Minecraft servers of various types"
+	        },
+	        {
+	            "name": "The Duel",
+	            "description": "The Duel servers of various types"
+	        }
+	    ]
+    }
+   
+
+Along with the JSON you need to create the `eggs` directory, that will contain one folder for each nest and inside this folder will be the pterodactyle *JSON* file for the eggs you want imported.
+
+PS: the name of the folder should match the name of the nest on the *nests.json* (but lower case, and separated by dashes).
 
 So the directory structure will look something like this:
 
-/srv/pterodactyl/seeders/
-├── nests.json
-└── eggs/
+    ├── nests.json
+    └── eggs/
     ├── counter-strike/
-    │   └── egg-counter-strike-global-offensive.json
+    │ └── egg-counter-strike-global-offensive.json
     ├── minecraft/
-    │   └── egg-forge-minecraft.json
-    │   └── egg-vanilla-minecraft.json
+    │ └── egg-forge-minecraft.json
+    │ └── egg-vanilla-minecraft.json
     └── ...
+  */srv/pterodactyl/seeders/ directory*
+  
+ So for the nest:
 
+    {
+       "name": "Counter Strike",
+       "description": "Counter Strike servers of various types"
+    },
+
+The folder that will hold all the eggs from this nest will be:
+
+    ├── counter-strike/
 
 
 ## Documentation
