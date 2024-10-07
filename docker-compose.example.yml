@@ -64,6 +64,7 @@ services:
     environment:
       <<: [*panel-environment, *mail-environment]
       DB_PASSWORD: *db-password
+      APP_NAME: "Velociraptor"
       APP_ENV: "production"
       APP_ENVIRONMENT_ONLY: "false"
       CACHE_DRIVER: "redis"
